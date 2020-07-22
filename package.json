@@ -1,9 +1,13 @@
 {
   "name": "vuepress-theme-fly",
   "version": "1.0.0",
-  "description": "Do creative work",
+  "description": "",
   "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
@@ -12,16 +16,15 @@
     "url": "git+https://github.com/Love-YY/vuepress-theme-fly.git"
   },
   "keywords": [],
-  "author": "LoveYY",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Love-YY/vuepress-theme-fly/issues"
   },
+  "homepage": "https://github.com/Love-YY/vuepress-theme-fly#readme",
   "devDependencies": {
-    "vuepress": "1.5.0",
-    "vuepress-theme-reco": "^1.5.3"
+    "vuepress": "^1.5.2",
+    "vuepress-theme-reco": "^1.5.4"
   },
-  "dependencies": {
-    "vue-class-component": "^7.2.3"
-  }
+  "dependencies": {}
 }
