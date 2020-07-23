@@ -26,5 +26,7 @@
     "vuepress": "^1.5.2",
     "vuepress-theme-reco": "^1.5.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vuetify": "^2.3.5"
+  }
 }
