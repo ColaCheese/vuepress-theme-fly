@@ -1,0 +1,3 @@
+MyHome组件是自定义首页，其它的是vuepress-theme-reco
+要注意的是引入vuetify的时候要在写组件的时候再引入CSS否则之前theme的样式会失效
+暂时还没有其它的解决方法
