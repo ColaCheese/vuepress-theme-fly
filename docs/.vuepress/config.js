@@ -1,7 +1,7 @@
 module.exports = {
     title: 'LOVEYY BLOG',
     description: 'Do creative work',
-    head: [  //  注入到当前页面的 HTML <head> 中的标签
+    head: [ //  注入到当前页面的 HTML <head> 中的标签
         ['link', {
             rel: 'icon',
             type: 'image/x-icon',
@@ -16,15 +16,15 @@ module.exports = {
             href: 'https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css'
         }]
     ],
-    dest: './dist',  //  指定 vuepress build 的输出目录
-    theme: 'reco',  //  指定主题
-    themeConfig: {  //  主题设置
+    dest: './dist', //  指定 vuepress build 的输出目录
+    theme: 'reco', //  指定主题
+    themeConfig: { //  主题设置
         type: 'blog',
         logo: '/img/favicon.ico',
         author: 'LOVELYY',
         authorAvatar: '/img/avater.png',
         modePicker: false,
-        nav: [{  //  导航栏
+        nav: [{ //  导航栏
                 text: 'Home',
                 link: '/',
                 icon: 'reco-home'
@@ -47,18 +47,27 @@ module.exports = {
         ],
         sidebar: 'auto',
         sidebar: {
-            '/android/': [
-                "",
-                "android1",
+            '/views/sidebar/': [
+                '',
+                'bar1',
+                'bar2'
             ],
-            "/ios/": [
-                "",
-                "ios1",
-            ],
-            "/web/": [
-                "",
-                "web1",
-            ],
+            '/views/sidebargroup/': [{
+                    title: '基础',
+                    collapsable: true,
+                    children: [
+                        '',
+                        'bar1'
+                    ]
+                },
+                {
+                    title: '进阶',
+                    collapsable: true,
+                    children: [
+                        'bar2'
+                    ]
+                },
+            ]
         },
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
