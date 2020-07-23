@@ -1,36 +1,46 @@
 module.exports = {
     title: 'LOVEYY BLOG',
     description: 'Do creative work',
-    head: [ //  注入到当前页面的 HTML <head> 中的标签
+    head: [  //  注入到当前页面的 HTML <head> 中的标签
         ['link', {
             rel: 'icon',
             type: 'image/x-icon',
             href: '/img/favicon.ico'
+        }],
+        ['meta', {
+            name: 'viewport',
+            content: 'width=device-width,initial-scale=1,user-scalable=no'
+        }],
+        ['link', {
+            rel: 'stylesheet',
+            href: 'https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css'
         }]
     ],
-    dest: './dist', //指定 vuepress build 的输出目录
-    theme: 'reco', //指定主题
-
-
-    themeConfig: {
+    dest: './dist',  //  指定 vuepress build 的输出目录
+    theme: 'reco',  //  指定主题
+    themeConfig: {  //  主题设置
         logo: '/img/favicon.ico',
-        author: 'LYY',
-        //导航栏
-        nav: [{
-                text: '主页',
-                link: '/'
+        author: 'LOVELYY',
+        modePicker: false,
+        nav: [{  //  导航栏
+                text: 'Home',
+                link: '/',
+                icon: 'reco-home'
             },
             {
-                text: '博文',
-                link: 'https://www.github.com/codeteenager'
+                text: 'Blog',
+                link: '/',
+                icon: 'reco-category'
             },
             {
-                text: '关于',
-                link: '/about/'
+                text: 'TimeLine',
+                link: '/timeline/',
+                icon: 'reco-date'
             },
             {
                 text: 'Github',
-                link: 'https://www.github.com/codeteenager'
+                link: 'https://github.com/Love-YY',
+                icon: 'reco-github'
             },
         ],
         sidebar: {
