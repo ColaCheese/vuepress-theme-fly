@@ -2,7 +2,7 @@
 <div>
     <div class="wrapper">
         <div class="head">Do Creative Work</div>
-        <v-btn class="head-btn" outlined color="#ffffff" large>
+        <v-btn class="head-btn" outlined color="#ffffff" large href="/blog/" style="text-decoration: none;">
             START&nbsp<v-icon right>mdi-arrow-right</v-icon>
         </v-btn>
     </div>
@@ -27,7 +27,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+    method: {}
+};
 </script>
 
 <style>
@@ -75,12 +77,13 @@ export default {};
     color: #ffffff;
     font-size: 80px;
     font-weight: 100;
-    animation: show 3s ease-in-out;
+    animation: show 2s;
 }
 
 .head-btn {
     margin-top: 70px;
-    animation: show 4s ease-in-out;
+    animation: show 2.5s;
+    
 }
 
 @keyframes show {

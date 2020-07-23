@@ -19,8 +19,10 @@ module.exports = {
     dest: './dist',  //  指定 vuepress build 的输出目录
     theme: 'reco',  //  指定主题
     themeConfig: {  //  主题设置
+        type: 'blog',
         logo: '/img/favicon.ico',
         author: 'LOVELYY',
+        authorAvatar: '/img/avater.png',
         modePicker: false,
         nav: [{  //  导航栏
                 text: 'Home',
@@ -29,7 +31,7 @@ module.exports = {
             },
             {
                 text: 'Blog',
-                link: '/',
+                link: '/blog/',
                 icon: 'reco-category'
             },
             {
@@ -43,6 +45,7 @@ module.exports = {
                 icon: 'reco-github'
             },
         ],
+        sidebar: 'auto',
         sidebar: {
             '/android/': [
                 "",
