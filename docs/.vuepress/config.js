@@ -46,45 +46,12 @@ module.exports = {
             },
         ],
         sidebar: 'auto',
-        sidebar: {
-            '/views/sidebar/': [
-                '',
-                'bar1',
-                'bar2'
-            ],
-            '/views/sidebargroup/': [{
-                    title: '基础',
-                    collapsable: true,
-                    children: [
-                        '',
-                        'bar1'
-                    ]
-                },
-                {
-                    title: '进阶',
-                    collapsable: true,
-                    children: [
-                        'bar2'
-                    ]
-                },
-            ]
-        },
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
-        friendLink: [
-            {
-              title: 'vuepress-theme-reco',
-              desc: 'A simple and beautiful vuepress Blog & Doc theme.',
-              logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-              link: 'https://vuepress-theme-reco.recoluan.com'
-            },
-            {
-              title: '午后南杂',
-              desc: 'Enjoy when you can, and endure when you must.',
-              email: 'recoluan@qq.com',
-              link: 'https://www.recoluan.com'
-            }
-        ]
+        valineConfig: {
+            appId: '', //  your appId
+            appKey: '', //  your appKey
+        }
     },
     markdown: {
         lineNumbers: true

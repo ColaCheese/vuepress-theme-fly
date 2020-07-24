@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: Do creative work
+heroText: Do Creative Work
 tagline: Every day is a better day
 bgImage: /img/background.jpg
 bgImageStyle: {

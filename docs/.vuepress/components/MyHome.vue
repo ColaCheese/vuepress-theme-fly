@@ -27,17 +27,17 @@
 </template>
 
 <script>
-import '../../../node_modules/vuetify/dist/vuetify.min.css'
 export default {
 };
 </script>
+
+<style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style>
 
 <style>
 .page {
     padding-top: 3rem;
     padding-bottom: 0rem;
 }
-
 .page .page-edit {
     padding: 0;
     margin: 0;
