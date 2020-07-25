@@ -23,7 +23,7 @@ jobs:
         env:
           APPID: ${{ secrets.APPID }}
           APPKEY: ${{ secrets.APPKEY }}
-        run: npm install && npm run build
+        run: npm install && vuepress build docs
 
       # deploy to Github Pages
       - name: Deploy
