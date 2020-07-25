@@ -8,13 +8,13 @@ categories:
  - network
 ---
 
-基于 `java` 、 `socket` 、 `TCP` 和 `UDP` 实现一个简易的网络文件服务程序，包含服务器端 `FileServer` 和客户端 `FileClient` 。服务器启动后，开启 `TCP：2021 port` ，`UDP：2020 port` ，其中，`TCP` 连接负责与用户交互，`UDP` 负责传送文件。客户端启动后，连接指定服务器的 `TCP：2021 port` ，成功后，服务器端回复信息： “ 客户端 IP 地址：客户端端口号 > 连接成功 ” 。服务器端支持多用户并发访问，不用考虑文件过大或 `UDP` 传输不可靠的问题。
+基于 `Java` 、 `Socket` 、 `TCP` 和 `UDP` 实现一个简易的网络文件服务程序，包含服务器端 `FileServer` 和客户端 `FileClient` 。服务器启动后，开启 `TCP：2021 PORT` ，`UDP：2020 PORT` ，其中，`TCP` 连接负责与用户交互，`UDP` 负责传送文件。客户端启动后，连接指定服务器的 `TCP：2021 PORT` ，成功后，服务器端回复信息： “ 客户端 IP 地址：客户端端口号 > 连接成功 ” 。服务器端支持多用户并发访问，不用考虑文件过大或 `UDP` 传输不可靠的问题。
 
 <!-- more -->
 
-## socket 简介
+## Socket 简介
 
-网络中的进程是通过 `socket` 来通信的。 `socket` 起源于 `Unix` ，而 `Unix` / `Linux` 基本哲学之一就是 “ 一切皆文件 ” ，都可以用 “ 打开 open > 读写 write / read > 关闭  close ” 模式来操作。 `socket` 就是该模式的一个实现， `socket` 即是一种特殊的文件， `socket` 函数就是对其进行的操作。
+网络中的进程是通过 `Socket` 来通信的。 `Socket` 起源于 `Unix` ，而 `Unix` / `Linux` 基本哲学之一就是 “ 一切皆文件 ” ，都可以用 “ 打开 open > 读写 write / read > 关闭  close ” 模式来操作。 `Socket` 就是该模式的一个实现， `Socket` 即是一种特殊的文件， `Socket` 函数就是对其进行的操作。
 
 ## FileClient 客户端
 
@@ -27,7 +27,7 @@ public class FileClient {
 
 }
 ```
-在 `FileClient` 的静态变量里面定义好 `TCP` 和 `UDP` 的端口号以及一次性传输字节数， `socket` 使用 `TCP` 连接与用户交互， `datagramSocket` 使用 `UDP` 连接传送文件。
+在 `FileClient` 的静态变量里面定义好 `TCP` 和 `UDP` 的端口号以及一次性传输字节数， `Socket` 使用 `TCP` 连接与用户交互， `datagramSocket` 使用 `UDP` 连接传送文件。
 
 ``` java
 /** TCP连接端口 */
@@ -41,7 +41,7 @@ private Socket socket;
 private DatagramSocket datagramSocket;
 ```
 
- `FileClient` 的构造函数。最初的 `host` 是在 `java` 的命令行运行参数里面给出的，但是后来又有要求是手动输入 `host` ，于是用 `Scanner` 不断循环读取，并初始化 `socket` 
+ `FileClient` 的构造函数。最初的 `Host` 是在 `Java` 的命令行运行参数里面给出的，但是后来又有要求是手动输入 `Host` ，于是用 `Scanner` 不断循环读取，并初始化 `Socket` 。
 
 ``` java
 private FileClient() throws UnknownHostException, IOException {
@@ -56,7 +56,7 @@ private FileClient() throws UnknownHostException, IOException {
     socket = new Socket(HOST, TCP_PORT);
 }
 ```
-定义客户端向服务器端发送消息的相关操作，用 `PrintWriter` 输出流向服务器写入命令，用 `BufferedReader` 输入流将服务器的返回信息接收。相关命令包括 `ls` 、 `cd` 、 `get` 、 `bye` 等。需要注意的是整个过程需要用 `try...catch` 包裹住来处理 IO 操作可能抛出的错误，另外，在 IO 操作结束后要关闭相应的输入输出流和 `socket` 连接。当运行到  `getFile()` 时，开启 `UDP` 连接进行文件传输。
+定义客户端向服务器端发送消息的相关操作，用 `PrintWriter` 输出流向服务器写入命令，用 `BufferedReader` 输入流将服务器的返回信息接收。相关命令包括 `ls` 、 `cd` 、 `get` 、 `bye` 等。需要注意的是整个过程需要用 `try...catch` 包裹住来处理 IO 操作可能抛出的错误，另外，在 IO 操作结束后要关闭相应的输入输出流和 `Socket` 连接。当运行到  `getFile()` 时，开启 `UDP` 连接进行文件传输。
 
 ```java {27}
  private void send() {
@@ -171,7 +171,7 @@ private void getFile(String fileName, long fileLength) throws IOException {
 }
 ```
 
-运行客户端
+运行客户端。
 
 ```java
 public static void main(String[] args) throws UnknownHostException, IOException {
@@ -194,7 +194,7 @@ public class FileServer {
 这里为了实现多个客户端同时访问，用到了 `ExecutorService` 线程池。这里 `POOL_SIZE` 是单个处理器同时工作的线程数目，根据当前的硬件来动态地获取可以使用的处理器的数量。
 
 ::: details
-`ExecutorService` 是 `java` 提供的线程池，也就是说，每次我们需要使用线程的时候，可以通过 `ExecutorService` 获得线程。它可以有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞，同时提供定时执行、定期执行、单线程、并发数控制等功能，也不用使用 `TimerTask` 了。
+`ExecutorService` 是 `Java` 提供的线程池，也就是说，每次我们需要使用线程的时候，可以通过 `ExecutorService` 获得线程。它可以有效控制最大并发线程数，提高系统资源的使用率，同时避免过多资源竞争，避免堵塞，同时提供定时执行、定期执行、单线程、并发数控制等功能，也不用使用 TimerTask 了。
 :::
 
 ```java
@@ -399,7 +399,7 @@ private void sendFile(String fileName) throws SocketException, IOException, Inte
 }
 ```
 
-到此，基本上一个基于 `TCP` 和 `UDP` 的网络文件服务就完成了。喜欢的话留言鼓励一下叭。:balloon::gift::tada:
+到此，基本上一个基于 `TCP` 和 `UDP` 的网络文件服务就完成了，喜欢的话留言鼓励一下叭。:balloon::gift::tada:
 
 
 

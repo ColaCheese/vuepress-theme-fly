@@ -15,7 +15,7 @@ WEB 代理服务器监听客户端的 request 请求，将 request 转发到目�
 
 所以之前写的 WEB 客户端可以用上了，用来模拟发送 `GET` 请求，但是还得给自己造个防火墙:scream::scream:，那就只能开始辽:bicyclist:。
 
-我的思路是这样的：在客户端向外发送请求的时候，代理服务器是作为服务器端接收请求的。当服务端向外界发送请求的时候，它又是作为客户端而存在的。除此之外，还需要一个线程池来应对多线程并发的情况，也就是要额外的处理类，所以，一共需要三个类 `ProxyServer` 、 `ProxyClient` 、 `ProxyHandler`。
+我的思路是这样的：在客户端向外发送请求的时候，代理服务器是作为服务器端接收请求的。当服务器端向外界发送请求的时候，它又是作为客户端而存在的。除此之外，还需要一个线程池来应对多线程并发的情况，也就是要额外的处理类，所以，一共需要三个类 `ProxyServer` 、 `ProxyClient` 、 `ProxyHandler`。
 
 ## ProxyServer 代理服务器服务端
 
@@ -180,7 +180,7 @@ public void processResponse() throws Exception {
 
 ## ProxyHandler 代理服务器执行
 
-`ProxyHandler` 类是根据客户端的请求报文向外界的服务器请求资源，可以看到，在这个类里面初始化了一个 `ProxyClient` 类，因为之前定义的 `ProxyClient` 类的 `connect()` 方法并没有定义主机地址和连接的端口号， `ProxyHandler` 类利用 `connect()` 方法向外界请求资源，而它自己的 `socket` 则是用来和客户端进行数据交换。
+`ProxyHandler` 类是根据客户端的请求报文向外界的服务器请求资源，可以看到，在这个类里面初始化了一个 `ProxyClient` 类，因为之前定义的 `ProxyClient` 类的 `connect()` 方法并没有定义主机地址和连接的端口号， `ProxyHandler` 类利用 `connect()` 方法向外界请求资源，而它自己的 `Socket` 则是用来和客户端进行数据交换。
 
 根据 URL 发送 `GET` 请求：
 
@@ -207,4 +207,4 @@ private void responseGet() throws IOException {
 }
 ```
 
-到此，基本上一个 WEB 代理服务器就完成了。喜欢的话留言鼓励一下叭。:balloon::gift::tada:
+到此，基本上一个 WEB 代理服务器就完成了，喜欢的话留言鼓励一下叭。:balloon::gift::tada:

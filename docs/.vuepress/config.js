@@ -49,8 +49,8 @@ module.exports = {
         sidebarDepth: 2,
         lastUpdated: 'Last Updated',
         valineConfig: {
-            appId: '', //  your appId
-            appKey: '', //  your appKey
+            appId: process.env.APPID, //  your appId
+            appKey: process.env.APPKEY, //  your appKey
         }
     },
     markdown: {
