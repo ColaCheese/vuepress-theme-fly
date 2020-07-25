@@ -16,7 +16,6 @@ module.exports = {
             href: 'https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css'
         }]
     ],
-    dest: './dist', //  指定 vuepress build 的输出目录
     theme: 'reco', //  指定主题
     themeConfig: { //  主题设置
         type: 'blog',
