@@ -22,7 +22,9 @@ categories:
 
 ```java
 public class FileClient {
+
     ...
+
 }
 ```
 在 `FileClient` 的静态变量里面定义好 `TCP` 和 `UDP` 的端口号以及一次性传输字节数， `socket` 使用 `TCP` 连接与用户交互， `datagramSocket` 使用 `UDP` 连接传送文件。
@@ -183,7 +185,9 @@ public static void main(String[] args) throws UnknownHostException, IOException 
 
 ```java
 public class FileServer {
+
     ...
+
 }
 ```
 
