@@ -48,6 +48,10 @@ export default {
     padding: 0;
 }
 
+.comments-wrapper {
+    display: none;
+}
+
 .wrapper {
     width: 100vw;
     height: 91vh;
