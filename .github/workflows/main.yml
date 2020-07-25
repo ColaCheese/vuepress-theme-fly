@@ -10,7 +10,7 @@ on:
 jobs:
   build-and-deploy-blog-to-github-page:
     # server env: latest Ubuntu
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       # pull project
       - name: Checkout
