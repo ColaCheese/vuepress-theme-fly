@@ -17,6 +17,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+      
+      # test if work
+      - name: Pass Variables
+        env:
+          APPID_test: ${{ secrets.APPID }}
+          APPKEY_test: ${{ secrets.APPKEY }}
+        run: echo 'try to show secret 😉' && echo $APPID_test && echo $APPKEY_test
 
       # build project
       - name: Build
