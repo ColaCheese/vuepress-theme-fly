@@ -1,0 +1,34 @@
+name: Deploy GitHub Pages
+
+# once pushed to master branch
+on:
+  push:
+    branches:
+      - master
+
+# jobs to build and deploy
+jobs:
+  build-and-deploy-blog-to-github-page:
+    # server env: latest Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      # pull project
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      # build project
+      - name: Build
+        env:
+          APPID: ${{ secrets.APPID }}
+          APPKEY: ${{ secrets.APPKEY }}
+        run: npm install && npm run build
+
+      # deploy to Github Pages
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/.vuepress/dist
