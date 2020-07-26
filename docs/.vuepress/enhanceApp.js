@@ -1,4 +1,5 @@
 import Vuetify from 'vuetify'
+import "../../node_modules/vuetify/dist/vuetify.min.css"
 
 export default ({
   Vue, // the version of Vue being used in the VuePress app
