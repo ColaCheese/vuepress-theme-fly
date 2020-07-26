@@ -35,16 +35,21 @@ export default {
 
 <style>
 .page {
-    padding-top: 3rem;
-    padding-bottom: 0rem;
+    padding-top: 3rem !important;
+    padding-bottom: 0rem !important;
 }
 .page .page-edit {
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.content__default:not(.custom) {
+    max-width: none !important;
+    padding: 0 !important;
 }
 
 .comments-wrapper {
-    display: none;
+    display: none !important;
 }
 
 .wrapper {
