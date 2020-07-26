@@ -33,7 +33,7 @@ export default {
 
 <style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style>
 
-<style>
+<style scoped>
 .page {
     padding-top: 3rem;
     padding-bottom: 0rem;
