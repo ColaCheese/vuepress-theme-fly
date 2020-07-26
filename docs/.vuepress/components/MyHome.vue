@@ -42,7 +42,7 @@ export default {
 
         let c = document.querySelector(".content__default:not(.custom)")
         c.style.maxWidth = "none"
-        c.style.padding = "0"  
+        c.style.padding = "0"
     }
 };
 </script>
