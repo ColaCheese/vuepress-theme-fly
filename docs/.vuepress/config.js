@@ -26,7 +26,8 @@ module.exports = {
         nav: [{ //  导航栏
                 text: 'Home',
                 link: 'https://www.flynoodle.xyz/',
-                icon: 'reco-home'
+                icon: 'reco-home', 
+                target:'_self'
             },
             {
                 text: 'Blog',
