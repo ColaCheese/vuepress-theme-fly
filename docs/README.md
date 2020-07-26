@@ -1,3 +1,3 @@
-<ClientOnly>
-    <MyHome />
-<ClientOnly>
+---
+layout: MyHome
+---
