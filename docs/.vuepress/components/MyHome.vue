@@ -34,24 +34,6 @@ export default {
 <style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style>
 
 <style>
-.page {
-    padding-top: 3rem;
-    padding-bottom: 0rem;
-}
-.page .page-edit {
-    padding: 0;
-    margin: 0;
-}
-
-.content__default:not(.custom) {
-    max-width: none;
-    padding: 0;
-}
-
-.comments-wrapper {
-    display: none;
-}
-
 .wrapper {
     width: 100vw;
     height: 91vh;
