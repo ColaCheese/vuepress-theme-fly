@@ -28,30 +28,22 @@
 
 <script>
 export default {
+    mounted(){
+        let page = document.getElementsByClassName("page")[0]
+        page.style.paddingTop = "3rem"
+        page.style.paddingBottom = "0rem"
+
+        let com = document.getElementsByClassName("comments-wrapper")[0]
+        com.style.display = "none"
+
+        
+    }
 };
 </script>
 
 <style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style>
 
 <style>
-.page {
-    padding-top: 3rem;
-    padding-bottom: 0rem;
-}
-.page .page-edit {
-    padding: 0;
-    margin: 0;
-}
-
-.content__default:not(.custom) {
-    max-width: none;
-    padding: 0;
-}
-
-.comments-wrapper {
-    display: none;
-}
-
 .wrapper {
     width: 100vw;
     height: 91vh;
