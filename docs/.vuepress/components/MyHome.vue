@@ -29,14 +29,9 @@
 <script>
 export default {
     mounted(){
-        let page = document.getElementsByClassName("page")[0]
-        page.style.paddingTop = "3rem"
-        page.style.paddingBottom = "0rem"
+     
 
-        let com = document.getElementsByClassName("comments-wrapper")[0]
-        com.style.display = "none"
 
-        
     }
 };
 </script>
