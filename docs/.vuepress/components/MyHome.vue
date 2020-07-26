@@ -42,6 +42,7 @@ export default {
 .page .page-edit {
     padding: 0;
     margin: 0;
+    
 }
 
 .content__default:not(.custom) {
