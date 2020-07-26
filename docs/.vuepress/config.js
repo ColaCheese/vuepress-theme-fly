@@ -22,7 +22,7 @@ module.exports = {
         logo: '/img/favicon.ico',
         author: 'LOVELYY',
         authorAvatar: '/img/avater.png',
-        modePicker: false,
+        modePicker: true,
         nav: [{ //  导航栏
                 text: 'Home',
                 link: '/',
