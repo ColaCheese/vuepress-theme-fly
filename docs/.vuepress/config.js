@@ -25,9 +25,8 @@ module.exports = {
         modePicker: true,
         nav: [{ //  导航栏
                 text: 'Home',
-                link: 'https://www.flynoodle.xyz/',
-                icon: 'reco-home', 
-                target:'_self'
+                link: '/',
+                icon: 'reco-home'
             },
             {
                 text: 'Blog',
