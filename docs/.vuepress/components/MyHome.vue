@@ -43,6 +43,14 @@ export default {
         let c = document.querySelector(".content__default:not(.custom)")
         c.style.maxWidth = "none"
         c.style.padding = "0"
+    },
+
+    watch: {
+        $route(to,from){
+            if(this.from!="/"){
+                this.$router.go(0)
+            }
+        }
     }
 };
 </script>
