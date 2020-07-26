@@ -33,20 +33,8 @@ export default {
 
 <style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style>
 
-<style scoped>
-.page {
-    padding-top: 3rem;
-    padding-bottom: 0rem;
-}
-.page .page-edit {
-    padding: 0;
-    margin: 0;
-}
+<style>
 
-.content__default:not(.custom) {
-    max-width: none;
-    padding: 0;
-}
 
 .wrapper {
     width: 100vw;
@@ -94,7 +82,7 @@ export default {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 719px) {
     .head {
         color: #ffffff;
         font-size: 40px;
