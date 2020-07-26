@@ -28,28 +28,36 @@
 
 <script>
 export default {
-    mounted(){
-        let page = document.getElementsByClassName("page")[0]
-        page.style.paddingTop = "3rem"
-        page.style.paddingBottom = "0rem"
+    mounted() {
+        this.$nextTick(() => {
+            setTimeout(() => {
+                let page = document.getElementsByClassName("page")[0]
+                let com = document.getElementsByClassName("comments-wrapper")[0]
+                let p = document.querySelector(".page .page-edit")
+                let c = document.querySelector(".content__default:not(.custom)")
 
-        let com = document.getElementsByClassName("comments-wrapper")[0]
-        com.style.display = "none"
+                if (page && com && p && c) {
+                    console.log(1)
 
-        let p = document.querySelector(".page .page-edit")
-        p.style.padding = "0"
-        p.style.margin = "0"
+                    page.style.paddingTop = "3rem"
+                    page.style.paddingBottom = "0rem"
 
-        let c = document.querySelector(".content__default:not(.custom)")
-        c.style.maxWidth = "none"
-        c.style.padding = "0"
+                    com.style.display = "none"
+
+                    p.style.padding = "0"
+                    p.style.margin = "0"
+
+                    c.style.maxWidth = "none"
+                    c.style.padding = "0"
+
+                }
+            })
+        })
     }
 };
 </script>
 
-<style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style>
-
-<style>
+<style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style><style>
 .wrapper {
     width: 100vw;
     height: 91vh;
@@ -81,7 +89,7 @@ export default {
 .head-btn {
     margin-top: 70px;
     animation: show 2.5s;
-    
+
 }
 
 @keyframes show {
