@@ -47,8 +47,8 @@ module.exports = {
         sidebar: 'auto',
         sidebarDepth: 2,
         valineConfig: {
-            appId: process.env.APPID,  //  your appId
-            appKey: process.env.APPKEY, //  your appKey
+            appId: "r5SndB4NIn23qbvOE2wquOJK-MdYXbMMI",  //  your appId
+            appKey: "wWuRCSi4ug8VoB4M553P1YfT", //  your appKey
         }
     },
     markdown: {

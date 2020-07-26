@@ -46,7 +46,6 @@ export default {
 .content__default:not(.custom) {
     max-width: none;
     padding: 0;
-    
 }
 
 .comments-wrapper {
