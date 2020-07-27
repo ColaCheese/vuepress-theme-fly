@@ -57,7 +57,8 @@ export default {
 };
 </script>
 
-<style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style><style>
+<style scoped src="../../../node_modules/vuetify/dist/vuetify.min.css"></style>
+<style>
 .wrapper {
     width: 100vw;
     height: 91vh;
