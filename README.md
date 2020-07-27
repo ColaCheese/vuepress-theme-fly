@@ -1,6 +1,5 @@
-MyHome组件是自定义首页，其它的是vuepress-theme-reco
+由 `vuepress-theme-reco` 主题修改，增加了自定义首页 :collision:
 
-要注意的是引入vuetify的时候要在写组件的时候再引入CSS否则之前theme的样式会失效
-暂时还没有其它的解决方法
+`Push` 之后自动部署到 `github.io` :dash:
 
-vue引入样式要在当前组件生效，需要scoped声明
+喜欢的话点个小星星叭 :star2:
