@@ -1,5 +1,5 @@
 ---
-title: Blog 中使用 Vuetify
+title: 当 vuepress 遇上 vuetify
 date: 2020-07-27
 tags:
  - vuepress
