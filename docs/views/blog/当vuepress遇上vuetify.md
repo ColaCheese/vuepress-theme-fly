@@ -1,5 +1,5 @@
 ---
-title: 当 vuepress 遇上 vuetify
+title: 当 VuePress 遇上 Vuetify
 date: 2020-07-27
 tags:
  - vuepress
